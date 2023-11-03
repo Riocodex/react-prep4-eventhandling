@@ -1,23 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+
 
 function App() {
+  let age = 22;
+    let name = "Rio";
+  useEffect(()=>{
+    
+    // if(age > 26 ){
+    //   console.log("you are now old");
+    // }else if(name === "Rio" && age === 20){
+    //   console.log("I am 20 years old");
+    //   console.log("i am rio");
+    // }else{
+    //   console.log("I am not Rosario");
+    //   console.log("i am too young");
+    // }
+
+    age > 20 ? (
+      console.log("i am now old")
+    ) : name === "Rio" && age === 20 ? (
+      <>
+       {console.log("this is me bro ")}
+        {console.log("i am rio")}
+      </>
+    ) : (
+      console.log("i am too young")
+    )
+
+  },[])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {age > 20 ? (
+        <p> you are old</p>
+      ):name === "Rio" && age === 20 ? (
+        <>
+        <p>Yes thats me</p>
+        <p>i am king</p>
+        </>
+      ):(
+        <>
+          <p>You too young to be him</p>
+          <p>gtfo</p>
+        </>
+      )}
     </div>
   );
 }
